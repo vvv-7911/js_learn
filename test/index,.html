@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // var n = 1000;
+    // var count = 0;
+    // while(n < 5000){
+    //     n = n + n*0.05;
+    //     count++;
+    // }
+    // console.log(count);
+    // var num = prompt("请输入一个大于1的整数：");
+    // if(num <= 1) {
+    //     alert("该值不合法！")
+    // } else {
+    //     var flag = true;
+    //     for(var i = 2; i < num; i++) {
+    //         if(num % i == 0) {
+    //             flag = false;
+    //          } 
+    //         }
+    //     if(flag) {
+    //         alert(num + "是质数");
+    //     }else {
+    //         alert(num +"不是质数")
+    //     }
+    //     }
+    //测试程序的性能
+    // console.time("计时器的名字")可以开启一个计时器
+    // 它需要一个字符串作为参数，这个字符串将会作为计时器的标识
+    console.time("test"); 
+    for(var num = 2; num <= 100; num++){
+        var flag = true;
+        // 可以通过 Math.sqrt()对一个数进行开方
+        // 可以把 i < num 改进为 i < Math.sqrt(num) 
+        for(var i = 2; i < Math.sqrt(num); i++) {
+            if(num % i == 0) {
+                flag = false;
+                // 如果进入判断则证明i不可能是质数，此时执行循环没有意义
+                // 使用break 来结束循环
+                break;
+             } 
+    }
+    if(flag) {
+          document.write(num + "<br>");
+        }
+    }
+    console.timeEnd("test");
+    </script>
+</body>
+</html>

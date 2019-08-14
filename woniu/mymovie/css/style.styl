@@ -1,0 +1,259 @@
+$hdbg_color = #e54847
+$font_color_block = #fff
+$db-color = #e5e5e5
+
+html,body
+    width 100%
+    user-select none
+
+.flex
+    display flex
+
+.flex1
+    flex 1
+
+.nav
+    height 1.067rem
+    font-size 18px
+    text-align center
+    background-color $hdbg_color
+    padding 6px
+    box-sizing border-box
+
+    .arrow-left
+        float left
+        height 100%
+        position relative
+
+        &:after
+            content: ''
+            height 12px
+            width 12px
+            position absolute
+            top 50%
+            left 16px
+            border 2px solid #fff
+            border-width 0 0 2px 2px
+            transform translateY(-50%) rotate(45deg)
+    span 
+        color $font_color_block
+        display inline-block
+.page
+    background #f4f4f4
+    position relative
+    z-index 1
+    margin 0
+    color #555555
+    min-width 3.1rem
+    -webkit-tap-highlight-color rgba(255,255,255,0)
+    font: 14px/1.5 Arial,Helvetica,sans-serif
+    section 
+        background #fff
+        border-bottom 1px solid $db-color
+    .movie-header
+
+        padding 0
+        background #f8f8f8
+        border-bottom none
+        .movie
+            color #ffffff
+            padding 0.4rem
+            line-height 1
+            overflow hidden
+            position relative
+            box-sizing border-box
+            filter blur(0)
+            &-background,
+            &-filter
+                position absolute
+                top 0
+                right 0
+                left 0
+                bottom 0
+            &-background
+                z-index 0
+                filter: blur(0.6rem)
+                -webkit-filter: blur(0.6rem)
+                background-image url(../images/header-bg.jpg)
+                background-size cover
+                background-repeat no-repeat
+                background-position-y 40%
+            &-filter
+                background-color #40454d
+                opacity 0.5
+            &-container
+                position relative
+                z-index 1
+                overflow hidden
+                .movie-cover
+                    float left
+                    width 2.854rem
+                    height 4rem
+                    border 1px solid #f0f2f3
+                    position relative
+                    &:after
+                        content ''
+                        width 1rem
+                        height 1rem
+                        position absolute
+                        top 50%
+                        left 50%
+                        border-radius 50%
+                        background-color #000
+                        background-image url(../images/bofang.png)
+                        background-size cover
+                        transform translate(-50%, -50%)
+                        opacity .7
+                    .img
+                        width 100%
+                .movie-content
+                    overflow hidden
+                    padding-left 0.4rem
+                    .movie-name
+                        font-size 17px
+                        margin 0.08rem 0
+                    .movie-ename
+                        font-size 12px
+                        margin-bottom 0.3rem
+                    .movie-score
+                        font-size 12px
+                        margin-bottom 0.3rem
+                        
+                        .rating
+
+                            .img
+                                width 0.48rem
+                                height 0.4rem
+                                margin-right 2px
+
+                            .rating-score
+                                font-size 0.48rem
+                                color #ffc600
+                    .movie-detail
+                        font-size 12px
+                        margin-bottom 0.16rem
+                        
+                        opacity 0.7
+                        div,p
+                            margin-bottom 0.14rem
+                        div
+                            display inline-block
+            .operating
+                margin-top 0.5rem
+                div
+                    border 1px solid rgba(255,255,255,0.4)
+                    background-color rgba(255,255,255,0.4)
+                    font-size 14px
+                    color #ffffff
+                    position relative
+                    z-index 2
+                    text-align center
+                    padding 0.25rem 0
+                    border-radius: 4px
+                    img 
+                        vertical-align middle
+                    span 
+                        vertical-align middle
+                .movie-watch
+                    margin-right 0.3rem
+                    img 
+                        width 14px
+                .movie-mark
+                    img 
+                        width 18px
+    .section-seprate
+        padding 0.4rem
+        margin-bottom 0.3rem
+        border-top 1px solid $db-color
+        .text-expander
+            &__content.close
+                overflow hidden
+                min-height 65px
+                display -webkit-box
+                text-overflow: ellipsis
+                word-break break-all
+                -webkit-box-orient: vertical
+                -webkit-line-clamp 3
+                transition: all .5s ease
+            &__button
+                text-align center
+                height 0.7em
+                .icon-chevron_down
+                    display inline-block
+                    width 10px
+                    height 10px
+                    border 1px solid #000
+                    border-width 0 1px 1px 0
+                    transform rotate(45deg)
+                    box-sizing border-box
+                    transition transform .5s ease
+                
+                .icon-chevron_down.up
+                    transform rotate(-135deg)
+                    transition transform .5s ease
+    .section-seprate
+        .section-title
+            font-weight bold
+            font-size 16px
+        .movie-celebrities
+            width 100%
+            padding 0.3rem 0.3rem 0.1rem 0
+            overflow-x auto
+            white-space nowrap
+            box-sizing border-box
+            li
+                text-align center
+                display inline-block
+                padding 0.04rem
+                .link
+                    color #000
+                    .movie-celebrities__pic
+                        width 1.7334rem
+                        height 2.4rem
+                        margin 0.05rem
+                        img 
+                            width 100%
+                    span 
+                        display block
+                        font-size .2rem
+                        text-overflow ellipsis
+                        overflow hidden
+                        white-space: nowrap
+                    .movie-celebrities-roles
+                        color #999
+    .movie-booking
+        .weui-flex
+            text-align center
+            .placeholder
+                span
+                    font-size 24px
+                    color #d96a3d
+                p
+                    color #bababa
+                    margin-top 0.1rem
+    .movie-photo_lists
+        width 100%
+        box-sizing border-box
+        padding 0.3rem 0.3rem 0.2rem 0.3rem
+        white-space nowrap
+        overflow-x scroll
+        .stage-img-container
+            margin-right 0.13333rem
+            display inline-block
+            width 2.4rem
+            height 1.867rem
+            .movie-celebrities__pic
+                width 100%
+                height 100%
+                img
+                    width 100%
+                    height 100%
+            &:first-child
+                width 3.3334rem
+                height 1.867rem
+            &:last-child
+                margin-right 0            
+#toas
+    display none
+.active
+    display block !important

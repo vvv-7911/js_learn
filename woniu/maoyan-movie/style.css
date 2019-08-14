@@ -1,0 +1,182 @@
+html,
+body {
+  width: 100%;
+}
+.flex {
+  display: flex;
+}
+.flex1 {
+  flex: 1;
+}
+.nav {
+  height: 1.067rem;
+  text-align: center;
+  font-size: 18px;
+  background: #e54847;
+  padding: 6px;
+  box-sizing: border-box;
+}
+.nav .arrow-left {
+  float: left;
+  height: 100%;
+  position: relative;
+}
+.nav .arrow-left:after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  border: 2px solid #fff;
+  border-width: 0 0 2px 2px;
+  transform: translateY(-50%) rotate(45deg);
+}
+.nav span {
+  color: #fff;
+  display: inline-block;
+}
+.page {
+  background-color: #f4f4f4;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #555;
+  min-width: 3.1rem;
+  -webkit-tap-highlight-color: rgba(255,255,255,0);
+  font: 14px/1.5 Arial, Helvetica, sans-serif;
+}
+.page section {
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+.page .movie-header {
+  padding: 0;
+  background: #f8f8f8;
+  border-bottom: none;
+}
+.page .movie {
+  color: #fff;
+  padding: 0.4rem;
+  line-height: 1;
+  position: relative;
+  box-sizing: border-box;
+  filter: blur(0);
+}
+.page .movie-background,
+.page .moviefiter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.page .movie-background {
+  z-index: 0;
+  filter: blur(0.6rem);
+  -webkit-filter: blur(0.6rem);
+  background-image: url("./images/header-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 40%;
+}
+.page .moviefilter {
+  background-color: #40454d;
+  opacity: 0.5;
+}
+.page .movie-container {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+.page .movie-container .movie-cover {
+  float: left;
+  width: 2.854rem;
+  height: 4rem;
+  border: 1px solid #f0f2f3;
+  position: relative;
+}
+.page .movie-container .movie-cover .img {
+  width: 100%;
+}
+.page .movie-container .movie-cover:after {
+  content: '';
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-image: url("./images/bofang.png");
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: 100% auto;
+  opacity: 0.7;
+}
+.page .movie-container .movie-content {
+  overflow: hidden;
+  padding-left: 0.4rem;
+}
+.page .movie-container .movie-content .movie-name {
+  font-size: 17px;
+  margin: 0.08rem 0;
+}
+.page .movie-container .movie-content .movie-ename {
+  font-size: 12px;
+  margin-bottom: 0.3rem;
+}
+.page .movie-container .movie-content .movie-score {
+  font-size: 12px;
+  margin-bottom: 0.3rem;
+}
+.page .movie-container .movie-content .movie-score .rating .img {
+  width: 0.48rem;
+  height: 0.48rem;
+  margin-right: 2px;
+}
+.page .movie-container .movie-content .movie-score .rating .rating-score {
+  font-size: 0.48rem;
+  color: #ffc600;
+}
+.page .movie-container .movie-content .movie-detail {
+  font-size: 12px;
+  margin-bottom: 0.16rem;
+  opacity: 0.7;
+}
+.page .movie-container .movie-content .movie-detail div,
+.page .movie-container .movie-content .movie-detail p {
+  margin-bottom: 0.14rem;
+}
+.page .movie .operating {
+  margin-top: 0.5rem;
+}
+.page .movie .operating div {
+  border: 1px solid rgba(255,255,255,0.4);
+  background-color: rgba(255,255,255,0.4);
+  font-size: 14px;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0.25rem 0;
+  border-radius: 4px;
+}
+.page .movie .operating div img {
+  vertical-align: middle;
+}
+.page .movie .operating div span {
+  vertical-align: middle;
+}
+.page .movie .operating .movie-watch {
+  margin-right: 0.3rem;
+}
+.page .movie .operating .movie-watch img {
+  width: 14px;
+}
+.page .movie .operating .movie-mark img {
+  width: 18px;
+}
+#toast {
+  display: none;
+}
+.active {
+  display: block !important;
+}

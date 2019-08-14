@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>juejin-posts-like-dislike</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <ul id="postLists">
+    <li>
+      <div class="content-box">
+        <div class="info-box">
+          <div class="info-row meta-row">
+              海康威视技术团队
+          </div>
+          <div class="info-row title-row">
+              你不知道的 node.js
+          </div>
+          <div class="info-row action-row">
+              99999
+          </div>
+        </div>
+        <div class="thumb"
+        style="background-image: url('https://user-gold-cdn.xitu.io/2019/7/24/16c24b21d59234c9?imageView2/1/w/120/h/120/q/85/format/webp/interlace/1'); background-size: cover;"
+        ></div>
+      </div>
+    </li>
+  </ul>
+  <script>
+    // fetch 新的api
+    // xmlhttpRequest 浏览器提供的原生的api
+    // $.ajax()  js库 封装了 xmlhttpRequest
+    // function res() {}
+    // const res = () => {}
+    // http://127.0.0.1:8080/posts.json
+    // 自己补充
+    // 当前这个 html 在哪个服务下 补充哪个
+    // 静态资源服务器 live-server 做了这个功能
+    // 静态资源: html css js img 
+    // 静态资源服务器: 将磁盘上的文件路径 和
+    // 服务器路径 一一 映射
+    // baidu.com
+    // 磁盘 a b logo.jpg
+    // baidu.com/a/b/logo.jpg
+    fetch('/posts.json')
+    .then(res => {
+      return res.json();
+    })
+    .then(res => {
+      console.log('fetch->', res);
+      renderPosts(res);
+    })
+    // html += '''
+    function renderPosts(posts) {
+      let postsHTML = posts.map(function(post) {
+        console.log('posts loop', post);
+        return `
+        <li>
+        <div class="content-box">
+        <div class="info-box">
+          <div class="info-row meta-row">
+              ${post.author}
+          </div>
+          <div class="info-row title-row">
+              ${post.postName}
+          </div>
+          <div class="info-row action-row">
+              ${post.likeCount}
+          </div>
+        </div>
+        <div class="thumb"
+        style="background-image: url('https://user-gold-cdn.xitu.io/2019/7/24/16c24b21d59234c9?imageView2/1/w/120/h/120/q/85/format/webp/interlace/1'); background-size: cover;"
+        ></div>
+      </div>
+      </li>
+        `
+      })
+      postsHTML = postsHTML
+      .join('');
+      const postListsNode = 
+      document.getElementById('postLists')
+      postListsNode.innerHTML = 
+      postListsNode.innerHTML +
+      postsHTML;
+      console.log(postsHTML);
+    }
+    const arr = [1, 1, 0]
+    const flags = arr
+    .map(function(num) {
+      return num === 1 ?
+      true :
+      false ;
+    })
+    console.log(flags);
+    var str = '123456'
+    // str = str + '789';
+    str += '789';
+    console.log( '1' + '10');
+    const arr1 = [0, 1, 2];
+    console.log(arr1.join(''));
+  </script>
+</body>
+</html>

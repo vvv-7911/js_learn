@@ -1,0 +1,14 @@
+[
+    {
+        "postName":"你不知道的js",
+        "createTime": 14,
+         "author":"有赞技术团队",
+         "likeCount":1000
+    },
+    {
+        "postName":"你不知道的 node.js",
+        "createTime": 14,
+         "author":"海康威视技术团队",
+         "likeCount":1000
+    }
+]
