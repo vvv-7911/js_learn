@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // ... rest 逆运算  数组  对象  打散
+    // var arr = [0, 7, 2, 3, 4]
+    // console.log([...arr]);  // 浅复制
+    // var a = {
+    //     ...obj,
+    //         b= 2,
+    //         c= 3
+    //   }
+ 
+    // a.a = 2;  
+    // console.log(a);
+
+
+    var obj = {
+        a: 1
+    }
+    var c = Object.assign({}, obj, {b:2, c: 3});
+    c.a = 123;
+    console.log(c)
+
+
+    // let maxNum = Math.max(0, 1, 67, 90, 100, 7);
+    let arr = [100, 99, 0, 1000];
+    let maxArrNum = Math.max(...arr);
+    console.log(maxArrNum);
+
+
+    let  a = arr[0],  arr1 = arr.slice(1);  // 把数组中的第一个数截取 剩余的数组成一个数组
+    console.log(a, arr1);
+    const [es6a, ...es6Array] = arr1;
+    </script>
+</body>
+</html>
