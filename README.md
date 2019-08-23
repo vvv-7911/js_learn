@@ -4,6 +4,6 @@
 
  - git status
  - git add ./
- - git commit -w ''
+ - git commit -m ''
  - git push origin master
  - git status
