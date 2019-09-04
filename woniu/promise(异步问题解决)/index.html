@@ -12,8 +12,9 @@
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
                 console.log("猛哥要相亲了！")
-                resolve('相亲很顺利！')
-            }, 1000)
+                // resolve('相亲很顺利！')
+                reject('相亲失败')
+            }, 500)
             })
             }
          
@@ -22,7 +23,7 @@
                 setTimeout(() => {
                 console.log("猛哥结婚了！")
                 resolve('')
-            }, 500)
+            }, 300)
             }) 
         }
 
@@ -30,11 +31,21 @@
             console.log('猛哥当爸爸了！')
         }
 
-        xq().then((e) => {
-            console.log(e)  //这个参数就是resolve 抛出来的东西 
-            marry().then(sw)
-        })   // 只有检测到resolve 才会执行.then()方法
+        // xq().then((e) => {
+        //     console.log(e)  //这个参数就是resolve 抛出来的东西 
+        //     marry().then(sw)
+        // })   // 只有检测到resolve 才会执行.then()方法
         // marry()
+
+        xq().catch((e) =>{
+            console.log(e)
+            marry()
+        })
+        .then(sw)
+
+        // Promise.all([xq(), marry()]).then(sw)
+
+        // Promise.race([xq(), marry()]).then(sw)
 
     </script>
 </body>
