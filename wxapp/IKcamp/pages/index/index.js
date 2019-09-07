@@ -107,6 +107,16 @@ let handler = {
       this.requestArticle()
     }
   }
-}
+},
+showDetail(e) {
+    let dataset = e.currentTarget.dataset
+    let item = dataset && dataset.item
+    let contentId = item.contentId || 0
+    // 调用实现阅读标识的函数
+    this.markRead(contentId)
+    wx.navigateTo({
+      url: `../detail/detail?contentId=${contentId}`
+    });
+  }
 
 Page(handler)

@@ -1,20 +1,34 @@
 <template>
-    <div class="main-content">
-        <!-- 头部header -->
-        <Header></Header>
+  <div class="main-content">
+    <!-- 头部header -->
+    <Header></Header>
+    <slide></slide>
+    <div class="content">
+      <transition name="move" mode="out-in">
+        <router-view></router-view>
+      </transition>
     </div>
-</template>>
+  </div>
+</template>
 
 <script>
 import Header from '@/common/Header'
+import Slide from '@/common/Slide'
+
 export default {
-    name: 'mainContent',
-    data() {
-        return {
-        }
-    },
-    components: {
-        Header
-    }
+  name: 'mainContent',
+  data () {
+    return {}
+  },
+  components: {
+    Header,
+    Slide
+  }
 }
 </script>
+
+<style scoped>
+.content{
+  padding-left: 200px;
+}
+</style>

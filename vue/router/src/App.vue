@@ -2,6 +2,13 @@
   <div id="app">
     <img src="./assets/logo.png">
     <router-view/>
+    <p>导航：
+      <router-link to="/">首页</router-link>
+      <router-link :to="{name: 'look', params:{id: 123}}">看一看</router-link>
+      <router-link to="/look/look1">瞧一瞧！</router-link>
+      <router-link to="/look/look2">瞅一瞅！</router-link>
+      <router-link to="/go-back">重定向</router-link>
+    </p>
   </div>
 </template>
 

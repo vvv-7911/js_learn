@@ -1,66 +1,74 @@
-// pages/detail/detail.js
+'use strict';
+
+import util from '../../utils/index';
+import config from '../../utils/config';
+import WxParse from '../../lib/wxParse/wxParse';
+import HtmlFormater from '../../lib/htmlFormater';
+
+let app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
+  onLoad() {
+    let id = option.contentId || 0;
+    this.setData({
+      isFromShare: !!option.share
+    });
+    this.init(id);
+  },
   data: {
-
+    scrollTop: 0,
+    detailData: {}
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  articleRevert() {
+    let htmlContent = this.data.detailData && this.data.detailData.content;
+    WxParse.wxParse('article', 'html', htmlContent, this, 0);
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  init(contentId) {
+    if (contentId) {
+      this.goTop()
+      this.requestDetail(contentId)
+        .then(data => {
+          this.configData(data)
+        })
+        .then(() => {
+          this.articleRevert()
+        })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  configPageData(data) {
+    if(data) {
+      this.setData ({
+        detailData: data
+      });
+      let title = this.data.detailData.title || config.defaultBarTitle
+      wx.setNavigationBarTitle({
+        title: title
+      })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  requestDetail(contentId) {
+    return util.request({
+      url: 'detail',
+      mock: true,
+      data: {
+        source:1
+      }
+    })
+      .then(res => {
+        let formateUpdateTime = this.formmateTime(res.data.lastUpdateTime)
+        res.data.formateUpdateTime = formateUpdateTime
+        return res.data
+      })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  formmateTime(timeStr = '') {
+    let year = timeStr.slice(0, 4),
+      month = timeStr.slice(5, 7),
+      day = timeStr.slice(8, 10);
+      return `${year}/${month}/${day}`;
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  next() {
+    this.requestNextContentId()
+      .then(data => {
+        
+      })
   }
 })
