@@ -41,7 +41,7 @@
         </ul>
       </div>
       <!-- 购物车 -->
-      <shopcart :selectFoods="selectFoods" :deliveryPrice="seller.deliveryPrice" :minPrice="seller.minPrice"></shopcart>
+      <shopcart ref="shopcart" :selectFoods="selectFoods" :deliveryPrice="seller.deliveryPrice" :minPrice="seller.minPrice"></shopcart>
     </div>
   </div>
 </template>
@@ -130,8 +130,13 @@ export default {
         this.listHeight.push(height)
       }
     },
-    addFood () {
-
+    addFood (target) {
+      this._drop(target)
+    },
+    _drop (target) {
+      this.$nextTick(() => {
+        this.$refs.shopcart.drop(target)
+      })
     }
   }
 }
