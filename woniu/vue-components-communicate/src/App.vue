@@ -1,16 +1,28 @@
 <template>
   <div id="app">
-    <child1 :msg="msg" :msg2="msg2" :fn="appFn" v-bind="test" :count="count" @addCount="countAdd" :add="countAdd"></child1>
+    <count/>
+    <!-- <child1 :msg="msg" :msg2="msg2" :fn="appFn" v-bind="test" :count="count" @addCount="countAdd" :add="countAdd"></child1> -->
     <!-- <router-view/> -->
+    <!-- <p>--------------------------</p>
+    <child2></child2>
+    <p>---------------------------</p>
+    <child3 fromChild="fromChild"></child3>
+    <span>{{message}}</span> -->
   </div>
 </template>
 
 <script>
 import child1 from '@/components/common/child1'
+import child2 from '@/components/common/child2'
+import child3 from '@/components/common/child3'
+import Count from '@/components/count'
 export default {
   name: 'App',
   components: {
-    child1
+    child1,
+    child2,
+    child3,
+    Count
   },
   data () {
     return {
@@ -20,7 +32,8 @@ export default {
         a: 1,
         b: 2
       },
-      count: 1
+      count: 1,
+      message: '父组件默认的数据'
     }
   },
   methods: {
@@ -29,6 +42,9 @@ export default {
     },
     countAdd () {
       this.count++
+    },
+    fromChild (e) {
+      this.message = e
     }
   }
 }
