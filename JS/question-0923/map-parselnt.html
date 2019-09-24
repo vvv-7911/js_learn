@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const res = ['1', '2', '3'].map(parseInt);
+    // '1' 0 parseInt('1', 0); 0 -> 10  1
+    // '2' 1 parseInt('2', 1); NaN
+    // '3' 2 parseInt('3', 2); NaN
+    console.log(res);
+    // [1, 2, 3]
+    // 函数是一等公民  它和其它的变量有同等的地位
+    function foo(a, b) {
+      console.log(a)
+      b();
+    }
+    function bar() {console.log('嘿嘿哟~')}
+    foo(1, bar);
+    //1
+    ['1', '2', '3'].map((a, b, c) => {
+      console.log(a, b, c)
+    });
+    //2
+    function bar123(d) {
+      console.log(d) // '1' '2' '3'
+    };
+    ['1', '2', '3'].map(bar123);
+    var str = '123' // 10进制
+    var str1 = '11'; // 2进制
+    parseInt(str, 10);
+    parseInt('123', 2);
+    // 默认10
+    
+    console.log(parseInt(str1, 2)); // 3
+    console.log(parseInt(str1, 10)); // 11
+    // 
+    // 返回的值都是十进制的
+  </script>
+</body>
+</html>
