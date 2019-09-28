@@ -9,19 +9,21 @@
     </v-header>
     <v-sidebar></v-sidebar>
     <!-- tab -->
-    
-    <!-- <router-view/> -->
+    <v-tab></v-tab>
+    <router-view/>
   </div>
 </template>
 
 <script>
 import header from './components/header'
 import sidebar from './components/sidebar'
+import tab from './components/tab'
 export default {
   name: 'App',
   components: {
     'v-header': header,
-    'v-sidebar': sidebar
+    'v-sidebar': sidebar,
+    'v-tab': tab
   }
 }
 </script>
