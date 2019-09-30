@@ -5,11 +5,11 @@ const vue = new Vue()
 
 // axios的配置
 axios.defaults.timeout = 10000
-axios.defaults.baseUrl = 'http://localhost:3000'
+axios.defaults.baseURL = 'http://localhost:3000'
 
-//返回状态判断（响应拦截器）
-axios.interceptors.reponse.use((res) => {
-  if (res.data.code != 200) {
+// 返回状态判断(响应拦截器)
+axios.interceptors.response.use((res) => {
+  if (res.data.code !== 200) {
     alert('网络异常')
     return Promise.reject(res)
   }
@@ -58,7 +58,7 @@ export default {
   },
   // 歌词
   MusicLyric(id) {
-    return fetchGet('./lyric', {id})
+    return fetchGet('/lyric', {id})
   },
   MusicUrl(id) {
     return fetchGet('/song/url', {id})

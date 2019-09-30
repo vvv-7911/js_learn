@@ -11,7 +11,7 @@
             <h1 class="title">热门搜索</h1>
             <ul>
               <li class="item" v-for="(item, index) in hotKey" :key="index">
-                <span>{{ item.first }}</span>
+                <span>{{item.first}}</span>
               </li>
             </ul>
           </div>
@@ -26,21 +26,21 @@
             <!-- 搜索历史列表 -->
             <v-search-list :searches="searchHistory" @select="addQuery"></v-search-list>
           </div>
-
         </div>
       </v-scroll>
     </div>
     <!-- 搜索结果 -->
     <div class="search-result" v-show="query" ref="searchResult">
-      
+      <v-suggest :query="query"></v-suggest>
     </div>
   </div>
 </template>
 
 <script>
-import searchList from '@/components/searchList'
 import searchBox from '@/components/searchBox'
 import scroll from '@/components/scroll'
+import searchList from '@/components/searchList'
+import suggest from '@/components/suggest'
 export default {
   data () {
     return {
@@ -58,20 +58,19 @@ export default {
   components: {
     'v-search-box': searchBox,
     'v-scroll': scroll,
-    'v-search-list': searchList
+    'v-search-list': searchList,
+    'v-suggest': suggest
   },
   methods: {
-    onQueryChange () {
-
+    onQueryChange (e) {
+      this.query = e
     },
-    addQuery() {
-
-    }
-  },
+    addQuery() {}
+  }
 }
 </script>
 
-<style scoped lang="stylus">
+<style lang="stylus" scoped>
 @import '../../assets/css/function'
 .search
   overflow hidden
