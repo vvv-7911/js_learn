@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html,body {
+      height: 100%;
+    }
+    #wrap {
+      min-height: 100%;
+      background-color: pink;
+      text-align: center;
+      overflow: hidden;
+    }
+    .main {
+      padding-bottom: 50px;
+    }
+    #footer {
+      height: 50px;
+      background-color: deeppink;
+      line-height: 50px;
+      text-align: center;
+      margin-top: -50px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    什么是stickyFooter
+    经典的“粘连” footer 布局
+    我们有一块内容<main>
+      当<main>的高度足够长的时候，<footer>会紧跟在<main>元素后面
+      当<main>元素较短的时候（比如小于屏幕的高度），我们希望<footer>元素能够"粘连"在屏幕的底部
+   -->
+   <div id="wrap">
+     <div class="main">
+       main <br/>
+       main <br/>
+       main <br/>
+       main <br/>
+       main <br/>
+       main <br/>
+       main <br/>
+       main <br/>
+       main <br/>
+       main <br/>
+       main <br/>
+       main <br/>
+       mai
+     </div>
+   </div>
+   <div id="footer">
+     footer
+   </div>
+</body>
+</html>

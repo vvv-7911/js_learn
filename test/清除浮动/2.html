@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- 
+    清除浮动
+      让浮动的子元素撑开父级的高度
+
+      2.通过开启BFC
+        浮动盒子的特点，定位盒子的特点：高宽都由内容撑开
+   -->
+   <style>
+     * {
+       margin: 0;
+       padding: 0;
+     }
+     #wrap {
+       border: 1px solid;
+       /* overflow: hidden; */
+       /* float: left; */
+       position: absolute;
+     }
+     #inner {
+       float: left;
+       width: 200px;
+       height: 200px;
+       background-color: pink;
+     }
+   </style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="inner"></div>
+  </div>
+</body>
+</html>

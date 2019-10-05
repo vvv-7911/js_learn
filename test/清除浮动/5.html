@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- 
+    清除浮动
+      让浮动的子元素撑开父级的高度
+
+      5.伪元素清除浮动
+   -->
+   <style>
+     * {
+       margin: 0;
+       padding: 0;
+     }
+     #wrap {
+       border: 1px solid;
+     }
+     #inner {
+       float: left;
+       width: 200px;
+       height: 200px;
+       background-color: pink;
+     }
+
+     /* 开启haslayout */
+     .clear {
+       *zoom: 1;
+     }
+     /* IE6 7 不支持伪元素 */
+     .clear::after {
+       content: "";
+       display: block;
+       clear: both;
+     }
+   </style>
+</head>
+<body>
+  <div id="wrap" class="clear">
+    <div id="inner"></div>
+  </div>
+</body>
+</html>
