@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- 已知高度的元素垂直水平居中 -->
+  <style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  #wrap {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background-color: deeppink;
+    margin: 0 auto;
+  }
+  #inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+  }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="inner">test</div>
+  </div>
+</body>
+</html>
