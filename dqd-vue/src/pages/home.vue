@@ -1,18 +1,23 @@
 <template>
-  <div id="home_page">
-    <i-header></i-header>
+  <div id="home-wrap">
+    <HomeNewsBar class="news-list"></HomeNewsBar>
   </div>
 </template>
 
 <script>
-import header from '@/components/home_page/header'
+import HomeNewsBar from '@/components/home_page/home_news_bar'
 export default {
   components: {
-    'i-header': header
+    HomeNewsBar
   }
 }
 </script>
 
 <style scoped>
-
+.home-wrap {
+  overflow: hidden;
+}
+.news-list {
+  overflow: hidden;
+}
 </style>
