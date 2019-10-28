@@ -1,0 +1,11 @@
+<% include('header') %>
+  hellow view
+  <!-- 用户名 密码 -->
+  <!-- 转义输出 -->
+  <p><%= userName %></p>
+  <p><%= sex %></p>
+  <!-- 当js -->
+  <% hobby.forEach(element => { %>
+    <li><%= element %></li>
+  <% });%>
+<% include('foot') %>
