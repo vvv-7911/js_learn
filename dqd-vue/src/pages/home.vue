@@ -1,14 +1,25 @@
 <template>
   <div id="home-wrap">
-    <HomeNewsBar class="news-list"></HomeNewsBar>
+    <div class="container">
+      <HomeNewsBar class="news-list"></HomeNewsBar>
+      <ImageNews class="imgnews"></ImageNews>
+      <VideoNews class="videonews"></VideoNews>
+      <MatchTitle class="match-box"></MatchTitle>
+    </div>
   </div>
 </template>
 
 <script>
 import HomeNewsBar from '@/components/home_page/home_news_bar'
+import ImageNews from '@/components/home_page/image_news'
+import VideoNews from '@/components/home_page/video_news'
+import MatchTitle from '@/components/home_page/match_title'
 export default {
   components: {
-    HomeNewsBar
+    HomeNewsBar,
+    ImageNews,
+    VideoNews,
+    MatchTitle
   }
 }
 </script>
@@ -17,7 +28,40 @@ export default {
 .home-wrap {
   overflow: hidden;
 }
-.news-list {
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0;
   overflow: hidden;
+}
+.news-list {
+  float: left;
+  overflow: hidden;
+}
+.imgnews {
+  float: right;
+  width: 340px;
+  overflow: hidden;
+}
+.videonews {
+  float: right;
+  overflow: hidden;
+}
+.videonews::after {
+  content: '/20';
+  width: 0;
+  overflow: hidden;
+  display: block;
+  clear: both;
+}
+.match-item {
+  overflow: hidden;
+}
+.match-box {
+  overflow: hidden;
+  clear: both;
+  width: 820px;
+  float: left;
+  margin-bottom: 60px;
 }
 </style>

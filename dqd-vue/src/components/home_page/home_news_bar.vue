@@ -10,12 +10,11 @@
       </a>
     </div>
     <div class="top-center">
-      <p class="news-list head-line" v-for="(newsitem, i) in item.newsList" :key="i">
+      <p class="news-list" v-for="(newsitem, i) in item.newsList" :key="i" :class="{'head-line': i == 0}">
         <router-link :to="newsitem.href">{{newsitem.text}}</router-link>
       </p>
     </div>
   </div>
-   
 </div>
  
 </template>
@@ -41,6 +40,7 @@ export default {
 <style scoped>
 .news {
   overflow: hidden;
+  padding-bottom: 15px;
 }
 .top-left {
   float: left;
@@ -49,7 +49,7 @@ export default {
   margin-right: 35px;
 }
 .top-left a {
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   width: 320px;
   height: 240px;
   display: block;
@@ -89,17 +89,17 @@ export default {
 .top-center {
   float: left;
   width: 468px;
-  height: 510px;
+  /* height: 510px; */
   overflow: hidden;
   margin-right: 30px;
 }
-.top-center .head-line {
-  font-size: 20px;
-}
 .top-center .news-list {
-  line-height: 30px;
+  /* line-height: 30px; */
   font-size: 16px;
   color: #333;
+}
+.top-center .head-line {
+  font-size: 20px;
 }
 .top-center a {
   display: block;

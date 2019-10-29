@@ -6,5 +6,14 @@ export default {
   },
   getHomeNewsInfo () {
     return fetchGet('/api/home/homenews/homenews_info_list')
+  },
+  getImageNewsInfo () {
+    return fetchGet('/api/home\/imagenews\/imagenews_info_list/')
+  },
+  getVideoNewsInfo () {
+    return fetchGet('/api/home\/videonews\/videonews_info_list/')
+  },
+  getMatchInfo () {
+    return fetchGet('/\/api\/home\/match\/match_info_list/')
   }
 }
