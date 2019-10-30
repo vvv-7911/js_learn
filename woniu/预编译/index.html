@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 变量  声明提升
+    // 函数声明 整体提升
+
+    // var a = 123
+    // console.log(a);
+
+    // test()
+    // function test() {
+    //   console.log('hello world');
+    // }
+
+
+    var global = 100;
+    function fn() {
+      console.log(global);
+    }
+    fn()
+
+    // GO {
+    //   global: undefined 100
+    //   fn: function() {...}
+    // }
+    // AO {
+         
+    // }
+
+    global = 100
+    function fn() {
+      console.log(global);
+      global = 200;
+      console.log(global);
+      var global = 300
+    }
+    fn () 
+    var global;
+  </script>
+</body>
+</html>
