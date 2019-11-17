@@ -5,6 +5,9 @@
       <ImageNews class="imgnews"></ImageNews>
       <VideoNews class="videonews"></VideoNews>
       <MatchTitle class="match-box"></MatchTitle>
+      <BlockTitle class="block"></BlockTitle>
+      <HotNews class="block"></HotNews>
+      <SocialNews class="block"></SocialNews>
     </div>
   </div>
 </template>
@@ -14,12 +17,18 @@ import HomeNewsBar from '@/components/home_page/home_news_bar'
 import ImageNews from '@/components/home_page/image_news'
 import VideoNews from '@/components/home_page/video_news'
 import MatchTitle from '@/components/home_page/match_title'
+import BlockTitle from '@/components/home_page/block_title'
+import HotNews from '@/components/home_page/hot_news'
+import SocialNews from '@/components/home_page/social_news'
 export default {
   components: {
     HomeNewsBar,
     ImageNews,
     VideoNews,
-    MatchTitle
+    MatchTitle,
+    BlockTitle,
+    HotNews,
+    SocialNews
   }
 }
 </script>
@@ -63,5 +72,9 @@ export default {
   width: 820px;
   float: left;
   margin-bottom: 60px;
+}
+.block {
+  float: right;
+  width: 340px;
 }
 </style>

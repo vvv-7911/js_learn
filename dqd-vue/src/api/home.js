@@ -15,5 +15,11 @@ export default {
   },
   getMatchInfo () {
     return fetchGet('/\/api\/home\/match\/match_info_list/')
+  },
+  getDataInfo () {
+    return fetchGet('/\/api\/home\/data\/data_info_list/')
+  },
+  getNewsInfo () {
+    return fetchGet('/\/api\/home\/news\/news_info_list/')
   }
 }

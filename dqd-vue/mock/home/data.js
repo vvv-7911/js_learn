@@ -1821,7 +1821,7 @@ const data = {
       },
       {
         match: '德甲',
-        inintegralList: [
+        integralList: [
           {
           "rank": "1",
           "team": "门兴格拉德巴赫",
@@ -2266,7 +2266,7 @@ const data = {
       },
       {
         match: '法甲',
-        inintegralList: [
+        integralList: [
           {
           "rank": "1",
           "team": "巴黎圣日耳曼",
