@@ -3,14 +3,14 @@
   <div id="nav">
     <ul class="nav nav-pills">
       <li role="presentation"><a href="#"><img src="../../assets/dqd-logo.png" alt="" class="logo"></a></li>
-      <li role="presentation" class="active"><a href="#" class="nav-tab">首页</a></li>
-      <li role="presentation"><a href="#" class="nav-tab">新闻</a></li>
-      <li role="presentation"><a href="#" class="nav-tab">视频</a></li>
-      <li role="presentation"><a href="#" class="nav-tab">直播</a></li>
-      <li role="presentation"><a href="#" class="nav-tab">数据</a></li>
-      <li role="presentation"><a href="#" class="nav-tab" >APP</a></li>
-      <li role="presentation"><a href="#" class="nav-tab">懂球号</a></li>
-      <li role="presentation" class="login"><a href="#">广告合作</a></li>
+      <li role="presentation" class="active"><router-link :to="{name: 'home'}" class="nav-tab">首页</router-link></li>
+      <li role="presentation"><router-link :to="{name: 'news'}" class="nav-tab">新闻</router-link></li>
+      <li role="presentation"><router-link to="" class="nav-tab">视频</router-link></li>
+      <li role="presentation"><router-link to="" class="nav-tab">直播</router-link></li>
+      <li role="presentation"><router-link to="" class="nav-tab">数据</router-link></li>
+      <li role="presentation"><router-link to="" class="nav-tab">APP</router-link></li>
+      <li role="presentation"><router-link to="" class="nav-tab">懂球号</router-link></li>
+      <li role="presentation" class="login"><router-link to="">广告合作</router-link></li>
     </ul>
   </div>
 </div>

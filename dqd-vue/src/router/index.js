@@ -8,8 +8,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: 'home',
       component: _import_('home')
+    },
+    {
+      path: '/news',
+      name: 'news',
+      component: _import_('news')
     }
   ]
 })
