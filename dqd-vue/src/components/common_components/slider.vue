@@ -52,12 +52,22 @@ export default {
   },
   methods: {
     selectItem (val) {
-      if (val > this.currIndex) {
-        this.$emit('slideToRight')
-      } else {
-        this.$emit('slideToLeft')
-      }
+      // if (val > this.currIndex) {
+      //   this.$emit('slideToRight')
+      // } else {
+      //   this.$emit('slideToLeft')
+      // }
       this.currIndex = val
+    },
+    lastItem () {
+      clearInterval(this.ivTimer)
+      this.selectItem((this.currIndex - 1 + this.showInfoList.length) % this.showInfoList.length)
+      this.ivTimer = setInterval(this.loopItem, 10000)
+    },
+    nextItem () {
+      clearInterval(this.ivTimer)
+      this.selectItem((this.currIndex + 1) % this.showInfoList.length)
+      this.ivTimer = setInterval(this.loopItem, 10000)
     },
     loopItem () {
       this.selectItem((this.currIndex + 1) % this.showInfoList.length)

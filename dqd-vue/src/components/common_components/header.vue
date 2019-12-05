@@ -3,14 +3,7 @@
   <div id="nav">
     <ul class="nav nav-pills">
       <li role="presentation"><a href="#"><img src="../../assets/dqd-logo.png" alt="" class="logo"></a></li>
-      <li role="presentation" class="active"><router-link :to="{name: 'home'}" class="nav-tab">首页</router-link></li>
-      <li role="presentation"><router-link :to="{name: 'news'}" class="nav-tab">新闻</router-link></li>
-      <li role="presentation"><router-link to="" class="nav-tab">视频</router-link></li>
-      <li role="presentation"><router-link to="" class="nav-tab">直播</router-link></li>
-      <li role="presentation"><router-link to="" class="nav-tab">数据</router-link></li>
-      <li role="presentation"><router-link to="" class="nav-tab">APP</router-link></li>
-      <li role="presentation"><router-link to="" class="nav-tab">懂球号</router-link></li>
-      <li role="presentation" class="login"><router-link to="">广告合作</router-link></li>
+      <li role="presentation" v-for="(item, index) in swiper" :key="index" :class="{'active': $route.path.indexOf(item.to) > -1}"><router-link :to="item.to" class="nav-tab">{{item.name}}</router-link></li>
     </ul>
   </div>
 </div>
@@ -18,6 +11,36 @@
 
 <script>
 export default {
+  data() {
+    return {
+      swiper: [{
+        name: '首页',
+        to: '/home'
+      },{
+        name: '新闻',
+        to: '/news'
+      },{
+        name: '视频',
+        to: '/videos'
+      },{
+        
+        name: '直播',
+        to: '/lives'
+      },{
+        name: '数据',
+        to: '/datas'
+      },{
+        name: 'APP',
+        to: '/app'
+      },{
+        name: '懂球号',
+        to: '/dqh'
+      },{
+        name: '广告合作',
+        to: '/gghz'
+      }]
+    }
+  },
 }
 </script>
 
