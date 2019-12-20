@@ -84,4 +84,22 @@ function BreadthFirstUnrecur (biTree) {
     if (node.left) queue.push(node.left)
   } 
 }
-BreadthFirstUnrecur(tree)
+// BreadthFirstUnrecur(tree)
+
+
+
+
+// 斐波那契
+function fb(n) {
+  let num1 = 1;
+  let num2 = 1;
+  let sum = num1 + num2;
+  if (n === 1 || n === 2) return 1;
+  for (let i= 3; i <= n; i++) {
+    sum = num1 + num2;
+    num1 = num2;
+    num2 = sum
+  }
+  return sum
+}
+console.log(fb(7))

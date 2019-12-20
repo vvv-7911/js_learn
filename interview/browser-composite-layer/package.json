@@ -1,0 +1,12 @@
+{
+  "name": "browser-composite-layer",
+  "version": "1.0.0",
+  "description": "http1.1  cache-control： 相对的\r http1.0  expires：固定的时间",
+  "main": "cache.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
